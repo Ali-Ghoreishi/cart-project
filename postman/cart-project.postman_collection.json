@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "b858dceb-f5b8-4685-95aa-a7ff36ae656d",
+		"name": "cart-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "POST /user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"user1\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/user/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /user/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/user/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "POST /product/insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"pofak\",\r\n    \"price\": \"2000\",\r\n    \"quantity\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product/insert",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "POST /cart-item/add-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXJzb24iOnsicGVyc29uSWQiOjEsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE2NzAxNDIwNTYsImV4cCI6MTY3MDc0Njg1Nn0.ju757WIcrMnXt5qafPK8rzdwDfkRYuKBf53jmatNbNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": \"2\",\r\n    \"quantity\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/cart-item/add-product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cart-item",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /cart-item/remove-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXJzb24iOnsicGVyc29uSWQiOjEsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE2NzAxNDIwNTYsImV4cCI6MTY3MDc0Njg1Nn0.ju757WIcrMnXt5qafPK8rzdwDfkRYuKBf53jmatNbNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/cart-item/remove-product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cart-item",
+								"remove-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /cart-item/update-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXJzb24iOnsicGVyc29uSWQiOjEsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE2NzAxNDIwNTYsImV4cCI6MTY3MDc0Njg1Nn0.ju757WIcrMnXt5qafPK8rzdwDfkRYuKBf53jmatNbNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": \"2\",\r\n    \"quantity\":\"11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/cart-item/update-product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"cart-item",
+								"update-product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:3050",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+
+
+  mysqldb:
+    image: mysql:8.0.25
+    # restart: unless-stopped
+    # env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cart_db
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: root
+
+    ports:
+      - "3307:3306"
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    depends_on:
+      - mysqldb
+    build: .
+    # restart: unless-stopped
+    # env_file: .env
+    ports:
+      - "3151:3050"
+    environment:
+      PORT: 3050
+      JWT_SECRET: mVczg9HLv9WM9
+      DATABASE: cart_db
+      HOST: localhost
+      USER: root
+      PASSWORD: root
+      DB_PORT: 3306
+
+    stdin_open: true
+    tty: true
+
+volumes: 
+   db:

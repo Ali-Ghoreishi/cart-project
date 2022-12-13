@@ -1,0 +1,1 @@
+declare module "*";             // to fix ts(7016) error

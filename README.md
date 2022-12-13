@@ -1,0 +1,1 @@
+Shopping cart project built with Nodejs, MySQL, TypeScript, Docker
